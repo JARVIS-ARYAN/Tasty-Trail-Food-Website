@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In - TastyTrail</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+.signin-page{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(to right,#ff4d4d,#ff9966);
+}
+
+.signin-box{
+    background:white;
+    padding:40px;
+    border-radius:12px;
+    text-align:center;
+    width:320px;
+}
+
+.signin-box input{
+    width:100%;
+    padding:10px;
+    margin:12px 0;
+}
+
+.signin-box button{
+    width:100%;
+    padding:10px;
+    background:#ff4d4d;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="signin-page">
+
+<div class="signin-box">
+<h2>TastyTrail Login</h2>
+
+<input type="text" id="username" placeholder="Enter Name">
+<input type="email" id="email" placeholder="Enter Email">
+
+<button onclick="loginUser()">Sign In</button>
+
+</div>
+
+</div>
+
+<script>
+
+function loginUser(){
+
+    const name =
+        document.getElementById("username").value;
+
+    const email =
+        document.getElementById("email").value;
+
+    if(name==="" || email===""){
+        alert("Please fill all details");
+        return;
+    }
+
+    /* Save user */
+    localStorage.setItem("tastyUser",name);
+
+    alert("Login Successful ✅");
+
+    window.location.href="index.html";
+}
+
+</script>
+
+</body>
+</html>
